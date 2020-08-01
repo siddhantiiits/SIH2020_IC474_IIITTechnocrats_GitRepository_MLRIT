@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//import 'package:smart_attendance_manager/pages/checkattendance.dart';
+import 'package:smart_attendance_manager/pages/checkattendance.dart';
 
 class DateEntry extends StatefulWidget {
   _DateEntryState createState() => _DateEntryState();
@@ -205,15 +205,15 @@ class _DateEntryState extends State<DateEntry> {
               ),
               onPressed: () {
                 if (_selectedMentor != "") {
-//                  Navigator.push(
-//                    context,
-//                    MaterialPageRoute(
-//                      builder: (context) => AttendanceCheck(
-//                        dateSelected: dateTime,
-//                        mentor: _selectedMentor,
-//                      ),
-//                    ),
-//                  );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AttendanceCheck(
+                        dateSelected: dateTime,
+                        mentor: _selectedMentor,
+                      ),
+                    ),
+                  );
                 } else {
                   showError(context);
                 }
