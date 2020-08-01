@@ -6,7 +6,7 @@ import 'package:smart_attendance_manager/widget/loader.dart';
 import 'package:animated_floatactionbuttons/animated_floatactionbuttons.dart';
 import 'package:smart_attendance_manager/pages/userinfo.dart';
 import 'package:smart_attendance_manager/pages/mentordateentry.dart';
-//import 'package:smart_attendance_manager/pages/dateentry.dart';
+import 'package:smart_attendance_manager/pages/dateentry.dart';
 
 class IntroPage extends StatefulWidget {
   _IntroPage createState() => _IntroPage();
@@ -305,10 +305,10 @@ class _IntroPage extends State<IntroPage> {
                                   ),
                                 ),
                                 onTap: () {
-//                                  Navigator.push(
-//                                      context,
-//                                      MaterialPageRoute(
-//                                          builder: (context) => DateEntry()));
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => DateEntry()));
                                 },
                               ),
                               SizedBox(height: 20.0),
