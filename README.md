@@ -4,6 +4,15 @@
 
 Automating Attendance using Mass Face Recognition and dual Interface Mobile Application for Android as well as iOS.
 
+## Features
+
+* Capturing Attendance
+* Keeping records of Attendance.
+* Semester-wise Metrics
+* Student’s Appeal
+* Manual Modification of Attendance.
+
+
 ## Technology Stacks Used
 
 * Machine Learning (Deep Learning)
@@ -15,5 +24,5 @@ Automating Attendance using Mass Face Recognition and dual Interface Mobile Appl
 
 ## Authors
 
-* **IIIT Technocrats** - *Core Team* - [Smart Attendance Manager](https://github.com/SIH2020_IC474_IIITTechnocrats_GitRepository_MLRIT)
+* **IIIT Technocrats** - *Core Team* - [Smart Attendance Manager](https://github.com/siddhantiiits/SIH2020_IC474_IIITTechnocrats_GitRepository_MLRIT.git)
 
