@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//import 'package:smart_attendance_manager/pages/mentorAttendaceCheck.dart';
+import 'package:smart_attendance_manager/pages/mentorAttendaceCheck.dart';
 
 class DateEntryMentor extends StatefulWidget {
   _DateMentorState createState() => _DateMentorState();
@@ -262,14 +262,14 @@ class _DateMentorState extends State<DateEntryMentor> {
                 if (_batch == "" || _branch == "") {
                   showError(context);
                 } else {
-//                  Navigator.push(
-//                      context,
-//                      MaterialPageRoute(
-//                          builder: (context) => AttendanceCheckMentor(
-//                                batch: _batch,
-//                                branch: _branch,
-//                                dateSelected: dateTime,
-//                              )));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => AttendanceCheckMentor(
+                                batch: _batch,
+                                branch: _branch,
+                                dateSelected: dateTime,
+                              )));
                 }
               },
               color: Theme.of(context).primaryColor.withOpacity(0.8),
