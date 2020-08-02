@@ -174,10 +174,10 @@ class _ModifyPage extends State<ModifyPage> {
                                             Icons.check,
                                             color: Colors.green,
                                           ),
-                                          onTap: () {
-                                            showDelete(context,
-                                                _attendance[index]['uid']);
-                                          },
+//                                          onTap: () {
+//                                            showDelete(context,
+//                                                _attendance[index]['uid']);
+//                                          },
                                         ),
                                       )),
                                   Divider(),

@@ -20,10 +20,10 @@ print(myList)
 for cl in myList:
     curImg = cv2.imread(f'{path}/{cl}')
     images.append(curImg)
-    classNames.append(os.path.splitext(cl)[0])
+    # classNames.append(os.path.splitext(cl)[0])
     # # for multiple dataset training write like : Siddhant Tiwari_1.jpg and so on and comment above line.
-    # cl=cl.split('_')[0]
-    # classNames.append(cl)
+    cl=cl.split('_')[0]
+    classNames.append(cl)
 print(classNames)
 
 
@@ -72,7 +72,7 @@ timeout = time.time() + 10
 while True:
     # success, img = cap.read()
     # img = captureScreen()
-    img=cv2.imread("pictest2.JPG")
+    img=cv2.imread("pictest4.JPG")
     imgS = cv2.resize(img, (0, 0), None, 0.25, 0.25)
     imgS = cv2.cvtColor(imgS, cv2.COLOR_BGR2RGB)
 
