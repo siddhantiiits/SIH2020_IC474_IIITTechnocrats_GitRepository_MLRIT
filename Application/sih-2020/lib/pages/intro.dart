@@ -7,6 +7,7 @@ import 'package:animated_floatactionbuttons/animated_floatactionbuttons.dart';
 import 'package:smart_attendance_manager/pages/userinfo.dart';
 import 'package:smart_attendance_manager/pages/mentordateentry.dart';
 import 'package:smart_attendance_manager/pages/dateentry.dart';
+import 'package:smart_attendance_manager/pages/metricdownload.dart';
 
 class IntroPage extends StatefulWidget {
   _IntroPage createState() => _IntroPage();
@@ -236,6 +237,39 @@ class _IntroPage extends State<IntroPage> {
                                     ),
                                   ),
                                   onTap: () {},
+                                ),
+                                SizedBox(height: 20.0),
+                                InkWell(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(1.0),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        color: Color.fromRGBO(57, 90, 174, 1),
+                                        border: Border.all(color: Colors.white),
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(20),
+                                        ),
+                                      ),
+                                      height: 80,
+                                      width: double.infinity,
+                                      child: Center(
+                                        child: Text(
+                                          ' Download Metrics ',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 30,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                MetricDownload()));
+                                  },
                                 ),
                               ],
                             ),
