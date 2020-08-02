@@ -19,7 +19,7 @@ class _UserInfoState extends State<UserInfo> {
   String _uploadedFileUrl;
   final picker = ImagePicker();
   GlobalKey<FormState> _updateInfo = GlobalKey<FormState>();
-  String name, branch, batch, email, pass;
+  String name, branch, batch, email, pass,hostel;
   bool showPwd = false;
 
   @override
@@ -36,6 +36,7 @@ class _UserInfoState extends State<UserInfo> {
         "branch": branch,
         "batch": batch,
         "pwd": pass,
+        "hostel":hostel,
       });
       await auth.currentUser().then((value) => value.updatePassword(pass));
     }
@@ -377,6 +378,36 @@ class _UserInfoState extends State<UserInfo> {
                                   borderRadius: BorderRadius.circular(10),
                                   borderSide:
                                       BorderSide(color: Color(0xFFa1a1a1))),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                              left: 30.0, right: 30.0, bottom: 10.0),
+                          child: TextFormField(
+                            onSaved: (val) => hostel = val,
+                            enabled: user.hostel == null ? false : true,
+                            initialValue: user.hostel==null ? "Day Scholar" : user.hostel,
+                            validator: (value) {
+                              if (value.length > 5 || value.length < 5) {
+                                return "Please enter a valid Hostel Number";
+                              }
+                            },
+                            decoration: InputDecoration(
+                              labelText: "Hostel ID",
+                              labelStyle: TextStyle(color: Color(0xFFa1a1a1)),
+                              hintText: "12345678",
+                              prefixIcon: Icon(
+                                Icons.home,
+                                color: Color(0xFFa1a1a1),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide:
+                                  BorderSide(color: Color(0xFFa1a1a1))),
                             ),
                           ),
                         )

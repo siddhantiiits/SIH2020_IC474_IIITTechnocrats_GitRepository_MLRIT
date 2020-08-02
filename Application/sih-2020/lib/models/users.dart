@@ -10,6 +10,7 @@ class User {
   final String roll;
   final String uid;
   final String photoUrl;
+  final String hostel;
 
   User(
       {this.name,
@@ -20,7 +21,8 @@ class User {
       this.batch,
       this.roll,
       this.uid,
-      this.photoUrl});
+      this.photoUrl,
+      this.hostel});
 
   factory User.fromDocument(DocumentSnapshot doc) {
     return User(
@@ -33,6 +35,7 @@ class User {
       roll: doc['roll'],
       uid: doc.documentID,
       photoUrl: doc['photoUrl'],
+      hostel: doc['hostel'],
     );
   }
 }

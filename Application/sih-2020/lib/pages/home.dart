@@ -42,6 +42,7 @@ class _HomePageState extends State<HomePage> {
     TextEditingController _roll = TextEditingController();
     TextEditingController _branchController = TextEditingController();
     TextEditingController _emailPwdchange = TextEditingController();
+    TextEditingController _hostel = TextEditingController();
 
     void _showAlert(String err) {
       showDialog(
@@ -113,6 +114,7 @@ class _HomePageState extends State<HomePage> {
         'roll': _roll.text,
         'uid': uid,
         'photoUrl': "",
+        'hostel':_hostel.text,
       });
     }
 
@@ -623,6 +625,46 @@ class _HomePageState extends State<HomePage> {
                                     Theme.of(context).accentColor.withAlpha(2),
                                 decorationColor:
                                     Theme.of(context).accentColor.withAlpha(2),
+                                color: Color.fromRGBO(74, 74, 74, 1)),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                              top: 10.0, left: 25.0, right: 25.0),
+                          child: TextFormField(
+                            controller: _hostel,
+                            validator: (value) {
+                              if (value.length > 5 || value.length < 5) {
+                                return "Please enter a valid Hostel Number";
+                              }
+                            },
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
+                              labelText: "Hostel ID",
+                              labelStyle: TextStyle(color: Color(0xFFa1a1a1)),
+                              hintText: "A-123",
+                              prefixIcon: Icon(
+                                Icons.home,
+                                color: Color(0xFFa1a1a1),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide:
+                                  BorderSide(color: Color(0xFFa1a1a1))),
+                              errorBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(color: Colors.red)),
+                              fillColor: Theme.of(context).accentColor,
+                              filled: true,
+                            ),
+                            style: TextStyle(
+                                backgroundColor:
+                                Theme.of(context).accentColor.withAlpha(2),
+                                decorationColor:
+                                Theme.of(context).accentColor.withAlpha(2),
                                 color: Color.fromRGBO(74, 74, 74, 1)),
                           ),
                         ),
