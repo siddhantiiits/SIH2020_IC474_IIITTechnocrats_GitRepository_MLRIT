@@ -72,7 +72,7 @@ timeout = time.time() + 10
 while True:
     # success, img = cap.read()
     # img = captureScreen()
-    img=cv2.imread("pictest2.JPG")
+    img=cv2.imread("pictest4.JPG")
     imgS = cv2.resize(img, (0, 0), None, 0.25, 0.25)
     imgS = cv2.cvtColor(imgS, cv2.COLOR_BGR2RGB)
 
@@ -81,7 +81,7 @@ while True:
     encodesCurFrame = face_recognition.face_encodings(imgS, facesCurFrame)
 
     for encodeFace, faceLoc in zip(encodesCurFrame, facesCurFrame):
-        matches = face_recognition.compare_faces(encodeListKnown, encodeFace, 0.49)  #give third parameter for tolerence default= 0.6
+        matches = face_recognition.compare_faces(encodeListKnown, encodeFace, 0.48)  #give third parameter for tolerence default= 0.6
 
         faceDis = face_recognition.face_distance(encodeListKnown, encodeFace)
         print(faceDis)
