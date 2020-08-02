@@ -37,7 +37,7 @@ branch=sys.argv[3]
 
 
 # counter=0
-timeout = time.time() + 10   # 30 sec from now
+
 
 path = 'ImagesAttendance'
 images = []
@@ -47,10 +47,10 @@ print(myList)
 for cl in myList:
     curImg = cv2.imread(f'{path}/{cl}')
     images.append(curImg)
-    classNames.append(os.path.splitext(cl)[0])
+    # classNames.append(os.path.splitext(cl)[0])
     # for multiple dataset training write like : Siddhant Tiwari_1.jpg and so on
-    # cl=cl.split('_')[0]
-    # classNames.append(cl)
+    cl=cl.split('_')[0]
+    classNames.append(cl)
 print(classNames)
 
 
@@ -95,18 +95,18 @@ encodeListKnown = findEncodings(images)
 print('Encoding Complete')
 
 cap = cv2.VideoCapture(0)
-
+timeout = time.time() + 30  # 30 sec from now
 while True:
     success, img = cap.read()
     # img = captureScreen()
     imgS = cv2.resize(img, (0, 0), None, 0.25, 0.25)
     imgS = cv2.cvtColor(imgS, cv2.COLOR_BGR2RGB)
 
-    facesCurFrame = face_recognition.face_locations(imgS)
+    facesCurFrame = face_recognition.face_locations(imgS, number_of_times_to_upsample=2)
     encodesCurFrame = face_recognition.face_encodings(imgS, facesCurFrame)
 
     for encodeFace, faceLoc in zip(encodesCurFrame, facesCurFrame):
-        matches = face_recognition.compare_faces(encodeListKnown, encodeFace) #give third parameter for tolerence default= 0.6
+        matches = face_recognition.compare_faces(encodeListKnown, encodeFace, 0.49) #give third parameter for tolerence default= 0.6
 
         faceDis = face_recognition.face_distance(encodeListKnown, encodeFace)
         print(faceDis)
@@ -140,8 +140,16 @@ while True:
     cv2.imshow('webcam',img)
     cv2.waitKey(1)
 
+    # if cv2.waitKey(1) & 0xFF == ord('q'):
+    #     break
+
+
+
     if time.time() > timeout:
         break
+
+cap.release()
+cv2.destroyAllWindows()
 
 print('Recognition Complete, Comparing and Splitting data...')
 
