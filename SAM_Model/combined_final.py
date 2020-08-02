@@ -110,7 +110,7 @@ while True:
 
         faceDis = face_recognition.face_distance(encodeListKnown, encodeFace)
         print(faceDis)
-        counter=counter+1
+
 
 
 

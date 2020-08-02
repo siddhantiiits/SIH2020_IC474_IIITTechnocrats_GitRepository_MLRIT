@@ -16,7 +16,7 @@ from flask import Flask
 
 def get_shell_script_output_using_check_output(mentor_id,batch,branch):
     stdout = check_output(
-        ['/Users/siddhanttiwari/Desktop/work/onlinecode_facer/shell.sh',mentor_id,batch,branch]).decode('utf-8')
+        ['/Users/siddhanttiwari/Desktop/SIH2020/SAM_Model/shell.sh',mentor_id,batch,branch]).decode('utf-8')
         # ['shell.sh']).decode('utf-8')
     return stdout
 
