@@ -47,32 +47,33 @@ class _DateEntryState extends State<DateEntry> {
 
   openMentorSelector(context) {
     showDialog(
-        context: context,
-        builder: (context) {
-          return Dialog(
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15.0)),
-            child: Container(
-              height: 500,
-              child: ListView.builder(
-                itemCount: 3,
-                itemBuilder: (context, index) {
-                  return GestureDetector(
-                      child: ListTile(
-                        leading: Icon(Icons.arrow_forward_ios),
-                        title: Text(_mentors[index]),
-                      ),
-                      onTap: () {
-                        setState(() {
-                          _selectedMentor = _mentors[index];
-                        });
-                        Navigator.pop(context);
+      context: context,
+      builder: (context) {
+        return Dialog(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
+          child: Container(
+            height: 500,
+            child: ListView.builder(
+              itemCount: 3,
+              itemBuilder: (context, index) {
+                return GestureDetector(
+                    child: ListTile(
+                      leading: Icon(Icons.arrow_forward_ios),
+                      title: Text(_mentors[index]),
+                    ),
+                    onTap: () {
+                      setState(() {
+                        _selectedMentor = _mentors[index];
                       });
-                },
-              ),
+                      Navigator.pop(context);
+                    });
+              },
             ),
-          );
-        });
+          ),
+        );
+      },
+    );
   }
 
   Widget build(context) {
@@ -82,112 +83,112 @@ class _DateEntryState extends State<DateEntry> {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             GestureDetector(
-              child: Container(
-                width: 150.0,
-                height: 150.0,
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Theme.of(context).primaryColor),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      "Date Selected:",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.grey[600],
+                child: Container(
+                  width: 150.0,
+                  height: 150.0,
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Theme.of(context).primaryColor),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        "Date Selected:",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.grey[600],
+                        ),
                       ),
-                    ),
-                    //Text("${dateTime.day} - ${dateTime.month} - ${dateTime.year}",textAlign: TextAlign.center,style: TextStyle(fontSize: 20.0,color: Colors.grey[600]),)
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          "${dateTime.day}",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.grey[600],
+                      //Text("${dateTime.day} - ${dateTime.month} - ${dateTime.year}",textAlign: TextAlign.center,style: TextStyle(fontSize: 20.0,color: Colors.grey[600]),)
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "${dateTime.day}",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.grey[600],
+                            ),
                           ),
-                        ),
-                        Padding(
+                          Padding(
                             padding: EdgeInsets.symmetric(horizontal: 5.0),
                             child: Container(
                               width: 1.0,
                               height: 10.0,
                               color: Colors.grey[600],
-                            )),
-                        Text(
-                          "${dateTime.month}",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.grey[600],
+                            ),
                           ),
-                        ),
-                        Padding(
+                          Text(
+                            "${dateTime.month}",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.grey[600],
+                            ),
+                          ),
+                          Padding(
                             padding: EdgeInsets.symmetric(horizontal: 5.0),
                             child: Container(
                               width: 1.0,
                               height: 10.0,
                               color: Colors.grey[600],
-                            )),
-                        Text(
-                          "${dateTime.year}",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.grey[600],
+                            ),
                           ),
-                        )
-                      ],
-                    ),
-                  ],
+                          Text(
+                            "${dateTime.year}",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.grey[600],
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              onTap: () async {
-                await openSelector(context);
-              },
-            ),
+                onTap: () async {
+                  await openSelector(context);
+                }),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 10.0),
             ),
             GestureDetector(
-              child: Container(
-                width: 150.0,
-                height: 150.0,
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Theme.of(context).accentColor),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      "Selected Mentor",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.grey[600],
+                child: Container(
+                  width: 150.0,
+                  height: 150.0,
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Theme.of(context).accentColor),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        "Selected Mentor",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.grey[600],
+                        ),
                       ),
-                    ),
-                    Text(
-                      _selectedMentor,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.grey[600],
+                      Text(
+                        _selectedMentor,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.grey[600],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              onTap: () {
-                openMentorSelector(context);
-              },
-            ),
+                onTap: () {
+                  openMentorSelector(context);
+                }),
             Padding(
               padding: EdgeInsets.only(top: 5.0),
             ),

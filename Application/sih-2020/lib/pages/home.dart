@@ -46,28 +46,29 @@ class _HomePageState extends State<HomePage> {
 
     void _showAlert(String err) {
       showDialog(
-          context: context,
-          builder: (context) {
-            return AlertDialog(
-              backgroundColor: Colors.white,
-              title: Text(
-                "Wrong Credentials",
-              ),
-              content: Text(
-                err,
-              ),
-              actions: <Widget>[
-                FlatButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: Text(
-                    "Close",
-                  ),
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            backgroundColor: Colors.white,
+            title: Text(
+              "Wrong Credentials",
+            ),
+            content: Text(
+              err,
+            ),
+            actions: <Widget>[
+              FlatButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text(
+                  "Close",
                 ),
-              ],
-            );
-          });
+              ),
+            ],
+          );
+        },
+      );
     }
 
     login() async {
@@ -114,7 +115,7 @@ class _HomePageState extends State<HomePage> {
         'roll': _roll.text,
         'uid': uid,
         'photoUrl': "",
-        'hostel':_hostel.text,
+        'hostel': _hostel.text,
       });
     }
 
@@ -141,84 +142,85 @@ class _HomePageState extends State<HomePage> {
 
     handlePasswordChange() {
       showDialog(
-          context: context,
-          builder: (context) {
-            return Dialog(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)),
-              child: Container(
-                height: 200.0,
-                child: Form(
-                  key: _pwdChange,
-                  child: ListView(
-                    children: <Widget>[
-                      Text(
-                        "Password Change",
-                        style: TextStyle(
-                            fontSize: 20.0, fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.center,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            top: 20.0, bottom: 20.0, left: 20.0, right: 20.0),
-                        child: TextFormField(
-                          controller: _emailPwdchange,
-                          validator: (value) => emailValidator(value),
-                          decoration: InputDecoration(
-                            labelText: "Email",
-                            labelStyle: TextStyle(color: Color(0xFFa1a1a1)),
-                            hintText: "student@mail.com",
-                            prefixIcon: Icon(
-                              Icons.email,
-                              color: Color(0xFFa1a1a1),
-                            ),
-                            enabledBorder: OutlineInputBorder(
+        context: context,
+        builder: (context) {
+          return Dialog(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            child: Container(
+              height: 200.0,
+              child: Form(
+                key: _pwdChange,
+                child: ListView(
+                  children: <Widget>[
+                    Text(
+                      "Password Change",
+                      style: TextStyle(
+                          fontSize: 20.0, fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.center,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          top: 20.0, bottom: 20.0, left: 20.0, right: 20.0),
+                      child: TextFormField(
+                        controller: _emailPwdchange,
+                        validator: (value) => emailValidator(value),
+                        decoration: InputDecoration(
+                          labelText: "Email",
+                          labelStyle: TextStyle(color: Color(0xFFa1a1a1)),
+                          hintText: "student@mail.com",
+                          prefixIcon: Icon(
+                            Icons.email,
+                            color: Color(0xFFa1a1a1),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
-                                borderSide:
-                                    BorderSide(color: Color(0xFFa1a1a1))),
-                            errorBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
-                                borderSide: BorderSide(color: Colors.red)),
-                          ),
+                              borderSide: BorderSide(color: Color(0xFFa1a1a1))),
+                          errorBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: BorderSide(color: Colors.red)),
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 50.0, right: 50.0),
-                        child: RaisedButton(
-                          onPressed: () async {
-                            await handlePwdTap();
-                          },
-                          child: Text(
-                            "Send E-Mail",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30.0)),
-                          color: Color(0xFFa8dbe0),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 50.0, right: 50.0),
+                      child: RaisedButton(
+                        onPressed: () async {
+                          await handlePwdTap();
+                        },
+                        child: Text(
+                          "Send E-Mail",
+                          style: TextStyle(color: Colors.white),
                         ),
-                      )
-                    ],
-                  ),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30.0)),
+                        color: Color(0xFFa8dbe0),
+                      ),
+                    )
+                  ],
                 ),
               ),
-            );
-          });
+            ),
+          );
+        },
+      );
     }
 
     void showInfo() {
       showDialog(
-          context: context,
-          builder: (context) {
-            return AboutDialog(
-              title: "IIIT Technocrats",
-              desc:
-                  "Team Lead by Siddhant\nTeam Members:\n Pulkit,Nikhil,Vaibhav,Ansh,Pranati\n\n Acknowledgement:\nDr. MN Doja, Mr. Gaurav Gautam,  Dr. Mukesh Mann, Dr. Rajiv Verma, Dr. Diddy Swamy and other staff of IIIT Sonepat",
-              btnText: "Close",
-            );
-          });
+        context: context,
+        builder: (context) {
+          return AboutDialog(
+            title: "IIIT Technocrats",
+            desc:
+                "Team Lead by Siddhant\nTeam Members:\n Pulkit,Nikhil,Vaibhav,Ansh,Pranati\n\n Acknowledgement:\nDr. MN Doja, Mr. Gaurav Gautam,  Dr. Mukesh Mann, Dr. Rajiv Verma, Dr. Diddy Swamy and other staff of IIIT Sonepat",
+            btnText: "Close",
+          );
+        },
+      );
     }
 
     return Scaffold(
@@ -228,73 +230,73 @@ class _HomePageState extends State<HomePage> {
             showInfo();
           }),
       body: Center(
-          child: FlipCard(
-        key: cardKey,
-        flipOnTouch: false,
-        front: Center(
-          child: Container(
-            height: 350.0,
-            width: 300.0,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Theme.of(context).primaryColor),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Container(
-                  width: 225.0,
-                  child: Text("Login",
-                      textAlign: TextAlign.start,
-                      style: TextStyle(
-                          fontSize: 30.0,
-                          fontWeight: FontWeight.w700,
-                          fontFamily: 'FiraSans')),
-                ),
-                Form(
-                  key: _loginKey,
-                  child: Column(
-                    children: <Widget>[
-                      Padding(
-                        padding:
-                            EdgeInsets.only(top: 10.0, left: 25.0, right: 25.0),
-                        child: TextFormField(
-                          controller: _emailController,
-                          keyboardType: TextInputType.emailAddress,
-                          validator: (value) => emailValidator(value),
-                          decoration: InputDecoration(
-                            labelText: "Email",
-                            labelStyle: TextStyle(color: Color(0xFFa1a1a1)),
-                            hintText: "student@mail.com",
-                            prefixIcon: Icon(
-                              Icons.email,
-                              color: Color(0xFFa1a1a1),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            focusedBorder: OutlineInputBorder(
+        child: FlipCard(
+          key: cardKey,
+          flipOnTouch: false,
+          front: Center(
+            child: Container(
+              height: 350.0,
+              width: 300.0,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Theme.of(context).primaryColor),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Container(
+                    width: 225.0,
+                    child: Text("Login",
+                        textAlign: TextAlign.start,
+                        style: TextStyle(
+                            fontSize: 30.0,
+                            fontWeight: FontWeight.w700,
+                            fontFamily: 'FiraSans')),
+                  ),
+                  Form(
+                    key: _loginKey,
+                    child: Column(
+                      children: <Widget>[
+                        Padding(
+                          padding: EdgeInsets.only(
+                              top: 10.0, left: 25.0, right: 25.0),
+                          child: TextFormField(
+                            controller: _emailController,
+                            keyboardType: TextInputType.emailAddress,
+                            validator: (value) => emailValidator(value),
+                            decoration: InputDecoration(
+                              labelText: "Email",
+                              labelStyle: TextStyle(color: Color(0xFFa1a1a1)),
+                              hintText: "student@mail.com",
+                              prefixIcon: Icon(
+                                Icons.email,
+                                color: Color(0xFFa1a1a1),
+                              ),
+                              enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
-                                borderSide:
-                                    BorderSide(color: Color(0xFFa1a1a1))),
-                            errorBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
-                                borderSide: BorderSide(color: Colors.red)),
-                            fillColor: Theme.of(context).primaryColor,
-                            filled: true,
-                          ),
-                          style: TextStyle(
-                            backgroundColor:
-                                Theme.of(context).primaryColor.withAlpha(2),
-                            decorationColor:
-                                Theme.of(context).primaryColor.withAlpha(2),
-                            color: Color(0xFF4a4a4a),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide:
+                                      BorderSide(color: Color(0xFFa1a1a1))),
+                              errorBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(color: Colors.red)),
+                              fillColor: Theme.of(context).primaryColor,
+                              filled: true,
+                            ),
+                            style: TextStyle(
+                              backgroundColor:
+                                  Theme.of(context).primaryColor.withAlpha(2),
+                              decorationColor:
+                                  Theme.of(context).primaryColor.withAlpha(2),
+                              color: Color(0xFF4a4a4a),
+                            ),
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsets.only(top: 10.0, left: 25.0, right: 25.0),
-                        child: TextFormField(
+                        Padding(
+                          padding: EdgeInsets.only(
+                              top: 10.0, left: 25.0, right: 25.0),
+                          child: TextFormField(
                             controller: _pwdController,
                             obscureText: true,
                             validator: (value) => pwdValidator(value),
@@ -325,379 +327,52 @@ class _HomePageState extends State<HomePage> {
                               backgroundColor: Theme.of(context).primaryColor,
                               decorationColor: Theme.of(context).primaryColor,
                               color: Color(0xFF4a4a4a),
-                            )),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  width: 270.0,
-                  child: InkWell(
-                    onTap: () {
-                      handlePasswordChange();
-                    },
-                    child: Text(
-                      "Forgot Password?",
-                      style: TextStyle(fontStyle: FontStyle.italic),
-                      textAlign: TextAlign.end,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.fromLTRB(75, 20, 75, 0),
-                  child: RaisedButton(
-                    onPressed: () {
-                      if (_loginKey.currentState.validate()) {
-                        login();
-                      }
-                    },
-                    child: Text("Login",
-                        style: TextStyle(
-                          fontFamily: "FiraSans",
-                          color: Colors.white,
-                        )),
-                    color: Color(0xFFa8dbe0),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30.0)),
-                  ),
-                ),
-                Center(
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 5.0),
-                    child: InkWell(
-                      onTap: () => cardKey.currentState.toggleCard(),
-                      child: Text(
-                        "Register",
-                        style: TextStyle(fontStyle: FontStyle.italic),
-                      ),
-                    ),
-                  ),
-                )
-              ],
-            ),
-          ),
-        ),
-        back: Center(
-          child: Container(
-            height: 500.0,
-            width: 300.0,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Theme.of(context).accentColor),
-            child: ListView(children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Container(
-                    width: 225.0,
-                    child: Text("Register",
-                        textAlign: TextAlign.start,
-                        style: TextStyle(
-                            fontSize: 25.0,
-                            fontWeight: FontWeight.w700,
-                            fontFamily: 'FiraSans')),
-                  ),
-                  Form(
-                    key: _registerKey,
-                    child: Column(
-                      children: <Widget>[
-                        Padding(
-                          padding: EdgeInsets.only(
-                              top: 10.0, left: 25.0, right: 25.0),
-                          child: TextFormField(
-                            textCapitalization: TextCapitalization.words,
-                            controller: _name,
-                            decoration: InputDecoration(
-                              labelText: "Name",
-                              labelStyle: TextStyle(color: Color(0xFFa1a1a1)),
-                              hintText: "John Appleseed",
-                              prefixIcon: Icon(
-                                Icons.account_circle,
-                                color: Color(0xFFa1a1a1),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide:
-                                      BorderSide(color: Color(0xFFa1a1a1))),
-                              errorBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide: BorderSide(color: Colors.red)),
-                              fillColor: Theme.of(context).accentColor,
-                              filled: true,
                             ),
-                            style: TextStyle(
-                                backgroundColor:
-                                    Theme.of(context).accentColor.withAlpha(2),
-                                decorationColor:
-                                    Theme.of(context).accentColor.withAlpha(2),
-                                color: Color.fromRGBO(74, 74, 74, 1)),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                              top: 10.0, left: 25.0, right: 25.0),
-                          child: TextFormField(
-                            textCapitalization: TextCapitalization.characters,
-                            controller: _branchController,
-                            validator: (value) {
-                              if (value != "CSE" && value != "IT") {
-                                return "Please enter valid Branch CSE or IT";
-                              }
-                            },
-                            decoration: InputDecoration(
-                              labelText: "Branch",
-                              labelStyle: TextStyle(color: Color(0xFFa1a1a1)),
-                              hintText: "CSE",
-                              prefixIcon: Icon(
-                                Icons.all_inclusive,
-                                color: Color(0xFFa1a1a1),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide:
-                                      BorderSide(color: Color(0xFFa1a1a1))),
-                              errorBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide: BorderSide(color: Colors.red)),
-                              fillColor: Theme.of(context).accentColor,
-                              filled: true,
-                            ),
-                            style: TextStyle(
-                                backgroundColor:
-                                    Theme.of(context).accentColor.withAlpha(2),
-                                decorationColor:
-                                    Theme.of(context).accentColor.withAlpha(2),
-                                color: Color.fromRGBO(74, 74, 74, 1)),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                              top: 10.0, left: 25.0, right: 25.0),
-                          child: TextFormField(
-                            controller: _emailController,
-                            keyboardType: TextInputType.emailAddress,
-                            validator: (value) => emailValidator(value),
-                            decoration: InputDecoration(
-                              labelText: "Email",
-                              labelStyle: TextStyle(color: Color(0xFFa1a1a1)),
-                              hintText: "student@mail.com",
-                              prefixIcon: Icon(
-                                Icons.email,
-                                color: Color(0xFFa1a1a1),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide:
-                                      BorderSide(color: Color(0xFFa1a1a1))),
-                              errorBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide: BorderSide(color: Colors.red)),
-                              fillColor: Theme.of(context).accentColor,
-                              filled: true,
-                            ),
-                            style: TextStyle(
-                                backgroundColor:
-                                    Theme.of(context).accentColor.withAlpha(2),
-                                decorationColor:
-                                    Theme.of(context).accentColor.withAlpha(2),
-                                color: Color.fromRGBO(74, 74, 74, 1)),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                              top: 10.0, left: 25.0, right: 25.0),
-                          child: TextFormField(
-                            controller: _pwdController,
-                            obscureText: true,
-                            validator: (value) => pwdValidator(value),
-                            decoration: InputDecoration(
-                              labelText: "Password",
-                              labelStyle: TextStyle(
-                                color: Color(0xFFa1a1a1),
-                              ),
-                              hintText: "********",
-                              prefixIcon: Icon(
-                                Icons.arrow_forward_ios,
-                                color: Color(0xFFa1a1a1),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide:
-                                      BorderSide(color: Color(0xFFa1a1a1))),
-                              errorBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide: BorderSide(color: Colors.red)),
-                              fillColor: Theme.of(context).accentColor,
-                              filled: true,
-                            ),
-                            style: TextStyle(
-                                backgroundColor: Theme.of(context).accentColor,
-                                decorationColor: Theme.of(context).accentColor,
-                                color: Color.fromRGBO(74, 74, 74, 1)),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                              top: 10.0, left: 25.0, right: 25.0),
-                          child: TextFormField(
-                            controller: _batch,
-                            validator: (value) {
-                              if (value.length > 4 || value.length < 4) {
-                                return "Please enter a valid Year";
-                              }
-                            },
-                            keyboardType: TextInputType.number,
-                            decoration: InputDecoration(
-                              labelText: "Batch",
-                              labelStyle: TextStyle(color: Color(0xFFa1a1a1)),
-                              hintText: "2020",
-                              prefixIcon: Icon(
-                                Icons.calendar_today,
-                                color: Color(0xFFa1a1a1),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide:
-                                      BorderSide(color: Color(0xFFa1a1a1))),
-                              errorBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide: BorderSide(color: Colors.red)),
-                              fillColor: Theme.of(context).accentColor,
-                              filled: true,
-                            ),
-                            style: TextStyle(
-                                backgroundColor:
-                                    Theme.of(context).accentColor.withAlpha(2),
-                                decorationColor:
-                                    Theme.of(context).accentColor.withAlpha(2),
-                                color: Color.fromRGBO(74, 74, 74, 1)),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                              top: 10.0, left: 25.0, right: 25.0),
-                          child: TextFormField(
-                            controller: _roll,
-                            validator: (value) {
-                              if (value.length > 8 || value.length < 8) {
-                                return "Please enter a valid Roll number";
-                              }
-                            },
-                            keyboardType: TextInputType.number,
-                            decoration: InputDecoration(
-                              labelText: "Roll Number",
-                              labelStyle: TextStyle(color: Color(0xFFa1a1a1)),
-                              hintText: "12345678",
-                              prefixIcon: Icon(
-                                Icons.branding_watermark,
-                                color: Color(0xFFa1a1a1),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide:
-                                      BorderSide(color: Color(0xFFa1a1a1))),
-                              errorBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide: BorderSide(color: Colors.red)),
-                              fillColor: Theme.of(context).accentColor,
-                              filled: true,
-                            ),
-                            style: TextStyle(
-                                backgroundColor:
-                                    Theme.of(context).accentColor.withAlpha(2),
-                                decorationColor:
-                                    Theme.of(context).accentColor.withAlpha(2),
-                                color: Color.fromRGBO(74, 74, 74, 1)),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                              top: 10.0, left: 25.0, right: 25.0),
-                          child: TextFormField(
-                            controller: _hostel,
-                            validator: (value) {
-                              if (value.length > 5 || value.length < 5) {
-                                return "Please enter a valid Hostel Number";
-                              }
-                            },
-                            keyboardType: TextInputType.number,
-                            decoration: InputDecoration(
-                              labelText: "Hostel ID",
-                              labelStyle: TextStyle(color: Color(0xFFa1a1a1)),
-                              hintText: "A-123",
-                              prefixIcon: Icon(
-                                Icons.home,
-                                color: Color(0xFFa1a1a1),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide:
-                                  BorderSide(color: Color(0xFFa1a1a1))),
-                              errorBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide: BorderSide(color: Colors.red)),
-                              fillColor: Theme.of(context).accentColor,
-                              filled: true,
-                            ),
-                            style: TextStyle(
-                                backgroundColor:
-                                Theme.of(context).accentColor.withAlpha(2),
-                                decorationColor:
-                                Theme.of(context).accentColor.withAlpha(2),
-                                color: Color.fromRGBO(74, 74, 74, 1)),
                           ),
                         ),
                       ],
+                    ),
+                  ),
+                  Container(
+                    width: 270.0,
+                    child: InkWell(
+                      onTap: () {
+                        handlePasswordChange();
+                      },
+                      child: Text(
+                        "Forgot Password?",
+                        style: TextStyle(fontStyle: FontStyle.italic),
+                        textAlign: TextAlign.end,
+                      ),
                     ),
                   ),
                   Padding(
                     padding: EdgeInsets.fromLTRB(75, 20, 75, 0),
                     child: RaisedButton(
                       onPressed: () {
-                        if (_registerKey.currentState.validate()) {
-                          print("success");
-                          handleRegister();
+                        if (_loginKey.currentState.validate()) {
+                          login();
                         }
                       },
-                      child: Text("Register",
-                          style: TextStyle(
-                            fontFamily: "FiraSans",
-                            color: Colors.white,
-                          )),
-                      color: Color(0xFFebd3cc),
-                      // color: Theme.of(context).primaryColor,
+                      child: Text(
+                        "Login",
+                        style: TextStyle(
+                          fontFamily: "FiraSans",
+                          color: Colors.white,
+                        ),
+                      ),
+                      color: Color(0xFFa8dbe0),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30.0)),
                     ),
                   ),
                   Center(
                     child: Padding(
-                      padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
+                      padding: EdgeInsets.only(top: 5.0),
                       child: InkWell(
                         onTap: () => cardKey.currentState.toggleCard(),
                         child: Text(
-                          "Login",
+                          "Register",
                           style: TextStyle(fontStyle: FontStyle.italic),
                         ),
                       ),
@@ -705,24 +380,371 @@ class _HomePageState extends State<HomePage> {
                   )
                 ],
               ),
-            ]),
+            ),
+          ),
+          back: Center(
+            child: Container(
+              height: 500.0,
+              width: 300.0,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Theme.of(context).accentColor),
+              child: ListView(children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Container(
+                      width: 225.0,
+                      child: Text("Register",
+                          textAlign: TextAlign.start,
+                          style: TextStyle(
+                              fontSize: 25.0,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'FiraSans')),
+                    ),
+                    Form(
+                      key: _registerKey,
+                      child: Column(
+                        children: <Widget>[
+                          Padding(
+                            padding: EdgeInsets.only(
+                                top: 10.0, left: 25.0, right: 25.0),
+                            child: TextFormField(
+                              textCapitalization: TextCapitalization.words,
+                              controller: _name,
+                              decoration: InputDecoration(
+                                labelText: "Name",
+                                labelStyle: TextStyle(color: Color(0xFFa1a1a1)),
+                                hintText: "John Appleseed",
+                                prefixIcon: Icon(
+                                  Icons.account_circle,
+                                  color: Color(0xFFa1a1a1),
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                    borderSide:
+                                        BorderSide(color: Color(0xFFa1a1a1))),
+                                errorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                    borderSide: BorderSide(color: Colors.red)),
+                                fillColor: Theme.of(context).accentColor,
+                                filled: true,
+                              ),
+                              style: TextStyle(
+                                  backgroundColor: Theme.of(context)
+                                      .accentColor
+                                      .withAlpha(2),
+                                  decorationColor: Theme.of(context)
+                                      .accentColor
+                                      .withAlpha(2),
+                                  color: Color.fromRGBO(74, 74, 74, 1)),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(
+                                top: 10.0, left: 25.0, right: 25.0),
+                            child: TextFormField(
+                              textCapitalization: TextCapitalization.characters,
+                              controller: _branchController,
+                              validator: (value) {
+                                if (value != "CSE" && value != "IT") {
+                                  return "Please enter valid Branch CSE or IT";
+                                }
+                              },
+                              decoration: InputDecoration(
+                                labelText: "Branch",
+                                labelStyle: TextStyle(color: Color(0xFFa1a1a1)),
+                                hintText: "CSE",
+                                prefixIcon: Icon(
+                                  Icons.all_inclusive,
+                                  color: Color(0xFFa1a1a1),
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                    borderSide:
+                                        BorderSide(color: Color(0xFFa1a1a1))),
+                                errorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                    borderSide: BorderSide(color: Colors.red)),
+                                fillColor: Theme.of(context).accentColor,
+                                filled: true,
+                              ),
+                              style: TextStyle(
+                                  backgroundColor: Theme.of(context)
+                                      .accentColor
+                                      .withAlpha(2),
+                                  decorationColor: Theme.of(context)
+                                      .accentColor
+                                      .withAlpha(2),
+                                  color: Color.fromRGBO(74, 74, 74, 1)),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(
+                                top: 10.0, left: 25.0, right: 25.0),
+                            child: TextFormField(
+                              controller: _emailController,
+                              keyboardType: TextInputType.emailAddress,
+                              validator: (value) => emailValidator(value),
+                              decoration: InputDecoration(
+                                labelText: "Email",
+                                labelStyle: TextStyle(color: Color(0xFFa1a1a1)),
+                                hintText: "student@mail.com",
+                                prefixIcon: Icon(
+                                  Icons.email,
+                                  color: Color(0xFFa1a1a1),
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                    borderSide:
+                                        BorderSide(color: Color(0xFFa1a1a1))),
+                                errorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                    borderSide: BorderSide(color: Colors.red)),
+                                fillColor: Theme.of(context).accentColor,
+                                filled: true,
+                              ),
+                              style: TextStyle(
+                                  backgroundColor: Theme.of(context)
+                                      .accentColor
+                                      .withAlpha(2),
+                                  decorationColor: Theme.of(context)
+                                      .accentColor
+                                      .withAlpha(2),
+                                  color: Color.fromRGBO(74, 74, 74, 1)),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(
+                                top: 10.0, left: 25.0, right: 25.0),
+                            child: TextFormField(
+                              controller: _pwdController,
+                              obscureText: true,
+                              validator: (value) => pwdValidator(value),
+                              decoration: InputDecoration(
+                                labelText: "Password",
+                                labelStyle: TextStyle(
+                                  color: Color(0xFFa1a1a1),
+                                ),
+                                hintText: "********",
+                                prefixIcon: Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: Color(0xFFa1a1a1),
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                    borderSide:
+                                        BorderSide(color: Color(0xFFa1a1a1))),
+                                errorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                    borderSide: BorderSide(color: Colors.red)),
+                                fillColor: Theme.of(context).accentColor,
+                                filled: true,
+                              ),
+                              style: TextStyle(
+                                  backgroundColor:
+                                      Theme.of(context).accentColor,
+                                  decorationColor:
+                                      Theme.of(context).accentColor,
+                                  color: Color.fromRGBO(74, 74, 74, 1)),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(
+                                top: 10.0, left: 25.0, right: 25.0),
+                            child: TextFormField(
+                              controller: _batch,
+                              validator: (value) {
+                                if (value.length > 4 || value.length < 4) {
+                                  return "Please enter a valid Year";
+                                }
+                              },
+                              keyboardType: TextInputType.number,
+                              decoration: InputDecoration(
+                                labelText: "Batch",
+                                labelStyle: TextStyle(color: Color(0xFFa1a1a1)),
+                                hintText: "2020",
+                                prefixIcon: Icon(
+                                  Icons.calendar_today,
+                                  color: Color(0xFFa1a1a1),
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                    borderSide:
+                                        BorderSide(color: Color(0xFFa1a1a1))),
+                                errorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                    borderSide: BorderSide(color: Colors.red)),
+                                fillColor: Theme.of(context).accentColor,
+                                filled: true,
+                              ),
+                              style: TextStyle(
+                                  backgroundColor: Theme.of(context)
+                                      .accentColor
+                                      .withAlpha(2),
+                                  decorationColor: Theme.of(context)
+                                      .accentColor
+                                      .withAlpha(2),
+                                  color: Color.fromRGBO(74, 74, 74, 1)),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(
+                                top: 10.0, left: 25.0, right: 25.0),
+                            child: TextFormField(
+                              controller: _roll,
+                              validator: (value) {
+                                if (value.length > 8 || value.length < 8) {
+                                  return "Please enter a valid Roll number";
+                                }
+                              },
+                              keyboardType: TextInputType.number,
+                              decoration: InputDecoration(
+                                labelText: "Roll Number",
+                                labelStyle: TextStyle(color: Color(0xFFa1a1a1)),
+                                hintText: "12345678",
+                                prefixIcon: Icon(
+                                  Icons.branding_watermark,
+                                  color: Color(0xFFa1a1a1),
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                    borderSide:
+                                        BorderSide(color: Color(0xFFa1a1a1))),
+                                errorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                    borderSide: BorderSide(color: Colors.red)),
+                                fillColor: Theme.of(context).accentColor,
+                                filled: true,
+                              ),
+                              style: TextStyle(
+                                  backgroundColor: Theme.of(context)
+                                      .accentColor
+                                      .withAlpha(2),
+                                  decorationColor: Theme.of(context)
+                                      .accentColor
+                                      .withAlpha(2),
+                                  color: Color.fromRGBO(74, 74, 74, 1)),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(
+                                top: 10.0, left: 25.0, right: 25.0),
+                            child: TextFormField(
+                              controller: _hostel,
+                              validator: (value) {
+                                if (value.length > 5 || value.length < 5) {
+                                  return "Please enter a valid Hostel Number";
+                                }
+                              },
+                              keyboardType: TextInputType.number,
+                              decoration: InputDecoration(
+                                labelText: "Hostel ID",
+                                labelStyle: TextStyle(color: Color(0xFFa1a1a1)),
+                                hintText: "A-123",
+                                prefixIcon: Icon(
+                                  Icons.home,
+                                  color: Color(0xFFa1a1a1),
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                    borderSide:
+                                        BorderSide(color: Color(0xFFa1a1a1))),
+                                errorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                    borderSide: BorderSide(color: Colors.red)),
+                                fillColor: Theme.of(context).accentColor,
+                                filled: true,
+                              ),
+                              style: TextStyle(
+                                  backgroundColor: Theme.of(context)
+                                      .accentColor
+                                      .withAlpha(2),
+                                  decorationColor: Theme.of(context)
+                                      .accentColor
+                                      .withAlpha(2),
+                                  color: Color.fromRGBO(74, 74, 74, 1)),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(75, 20, 75, 0),
+                      child: RaisedButton(
+                        onPressed: () {
+                          if (_registerKey.currentState.validate()) {
+                            print("success");
+                            handleRegister();
+                          }
+                        },
+                        child: Text(
+                          "Register",
+                          style: TextStyle(
+                            fontFamily: "FiraSans",
+                            color: Colors.white,
+                          ),
+                        ),
+                        color: Color(0xFFebd3cc),
+                        // color: Theme.of(context).primaryColor,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30.0)),
+                      ),
+                    ),
+                    Center(
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
+                        child: InkWell(
+                          onTap: () => cardKey.currentState.toggleCard(),
+                          child: Text(
+                            "Login",
+                            style: TextStyle(fontStyle: FontStyle.italic),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ]),
+            ),
           ),
         ),
-      )),
+      ),
     );
   }
 
-  Widget build(context){
+  Widget build(context) {
     return StreamBuilder(
       stream: auth.onAuthStateChanged,
-      builder: (context,snap){
-        if(snap.hasData){
-          if(snap.data.providerData.length == 1){
+      builder: (context, snap) {
+        if (snap.hasData) {
+          if (snap.data.providerData.length == 1) {
             return buildAuthPage();
-          }else{
+          } else {
             return buildAuthPage();
           }
-        }else{
+        } else {
           return buildUnAuthPage();
         }
       },

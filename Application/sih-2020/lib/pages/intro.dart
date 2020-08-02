@@ -178,10 +178,11 @@ class _IntroPage extends State<IntroPage> {
                                   ),
                                   onTap: () {
                                     Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                DateEntryMentor()));
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => DateEntryMentor(),
+                                      ),
+                                    );
                                   },
                                 ),
                                 SizedBox(height: 20.0),
@@ -265,10 +266,11 @@ class _IntroPage extends State<IntroPage> {
                                   ),
                                   onTap: () {
                                     Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                MetricDownload()));
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => MetricDownload(),
+                                      ),
+                                    );
                                   },
                                 ),
                               ],
@@ -340,9 +342,11 @@ class _IntroPage extends State<IntroPage> {
                                 ),
                                 onTap: () {
                                   Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => DateEntry()));
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => DateEntry(),
+                                    ),
+                                  );
                                 },
                               ),
                               SizedBox(height: 20.0),
