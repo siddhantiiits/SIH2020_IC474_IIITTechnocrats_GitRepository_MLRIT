@@ -70,26 +70,32 @@ class _AttendanceCheckState extends State<AttendanceCheck> {
                         ? Theme.of(context).primaryColor
                         : Theme.of(context).accentColor,
                     body: Center(
-                      child: Container(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Text(
-                              isPresent ? "Present" : "Absent",
-                              style: TextStyle(
-                                  fontSize: 25.0, color: Colors.grey[600]),
-                            ),
-                            Text(
-                              isPresent
-                                  ? "Attendance Captured on : ${formattedDate} in ${widget.mentor} Lecture"
-                                  : "",
-                              style: TextStyle(
-                                fontSize: 18.0,
-                                color: Colors.grey[600],
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                isPresent ? "Present" : "Absent",
+                                style: TextStyle(
+                                    fontSize: 25.0, color: Colors.grey[600]),
                               ),
-                              textAlign: TextAlign.center,
-                            ),
-                          ],
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                isPresent
+                                    ? "Attendance Captured on : ${formattedDate} in ${widget.mentor} Lecture"
+                                    : "",
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  color: Colors.grey[600],
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

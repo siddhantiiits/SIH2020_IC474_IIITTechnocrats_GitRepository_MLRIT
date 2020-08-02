@@ -65,14 +65,15 @@ class _AttendanceMentorState extends State<AttendanceCheckMentor> {
                   List _attendance = snap.data.documents;
                   if (_attendance.length == 0) {
                     return Scaffold(
-                        backgroundColor: Theme.of(context).accentColor,
-                        body: Center(
-                          child: Text(
-                            "No Record Found!",
-                            style: TextStyle(
-                                fontSize: 20.0, color: Colors.grey[600]),
-                          ),
-                        ));
+                      backgroundColor: Theme.of(context).accentColor,
+                      body: Center(
+                        child: Text(
+                          "No Record Found!",
+                          style: TextStyle(
+                              fontSize: 20.0, color: Colors.grey[600]),
+                        ),
+                      ),
+                    );
                   }
                   return Scaffold(
                     backgroundColor: Colors.white,
@@ -84,25 +85,25 @@ class _AttendanceMentorState extends State<AttendanceCheckMentor> {
                               return Column(
                                 children: <Widget>[
                                   Padding(
-                                      padding: EdgeInsets.all(15.0),
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                            color:
-                                                Theme.of(context).primaryColor,
-                                            borderRadius:
-                                                BorderRadius.circular(15.0)),
-                                        child: ListTile(
-                                          leading: Icon(Icons.account_circle),
-                                          title:
-                                              Text(_attendance[index]['name']),
-                                          subtitle:
-                                              Text(_attendance[index]['roll']),
-                                          trailing: Icon(
-                                            Icons.check,
-                                            color: Colors.green,
-                                          ),
+                                    padding: EdgeInsets.all(15.0),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        color: Theme.of(context).primaryColor,
+                                        borderRadius:
+                                            BorderRadius.circular(15.0),
+                                      ),
+                                      child: ListTile(
+                                        leading: Icon(Icons.account_circle),
+                                        title: Text(_attendance[index]['name']),
+                                        subtitle:
+                                            Text(_attendance[index]['roll']),
+                                        trailing: Icon(
+                                          Icons.check,
+                                          color: Colors.green,
                                         ),
-                                      )),
+                                      ),
+                                    ),
+                                  ),
                                   Divider(),
                                 ],
                               );

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:smart_attendance_manager/pages/mentorAttendaceCheck.dart';
+import 'modifyPage.dart';
 
-class DateEntryMentor extends StatefulWidget {
-  _DateMentorState createState() => _DateMentorState();
+class ModifyAttendance extends StatefulWidget {
+  _ModifyAttendance createState() => _ModifyAttendance();
 }
 
-class _DateMentorState extends State<DateEntryMentor> {
+class _ModifyAttendance extends State<ModifyAttendance> {
   DateTime dateTime;
   String _batch = "";
   String _branch = "";
@@ -47,8 +47,7 @@ class _DateMentorState extends State<DateEntryMentor> {
         builder: (context) {
           return Dialog(
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15.0),
-            ),
+                borderRadius: BorderRadius.circular(15.0)),
             child: Container(
               height: 300,
               child: ListView.builder(
@@ -78,8 +77,7 @@ class _DateMentorState extends State<DateEntryMentor> {
         builder: (context) {
           return Dialog(
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15.0),
-            ),
+                borderRadius: BorderRadius.circular(15.0)),
             child: Container(
               height: 150,
               child: ListView.builder(
@@ -218,13 +216,12 @@ class _DateMentorState extends State<DateEntryMentor> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 5.0),
-                          child: Container(
-                            width: 1.0,
-                            height: 10.0,
-                            color: Colors.grey[600],
-                          ),
-                        ),
+                            padding: EdgeInsets.symmetric(horizontal: 5.0),
+                            child: Container(
+                              width: 1.0,
+                              height: 10.0,
+                              color: Colors.grey[600],
+                            )),
                         Text(
                           "${dateTime.month}",
                           textAlign: TextAlign.center,
@@ -234,13 +231,12 @@ class _DateMentorState extends State<DateEntryMentor> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 5.0),
-                          child: Container(
-                            width: 1.0,
-                            height: 10.0,
-                            color: Colors.grey[600],
-                          ),
-                        ),
+                            padding: EdgeInsets.symmetric(horizontal: 5.0),
+                            child: Container(
+                              width: 1.0,
+                              height: 10.0,
+                              color: Colors.grey[600],
+                            )),
                         Text(
                           "${dateTime.year}",
                           textAlign: TextAlign.center,
@@ -267,21 +263,18 @@ class _DateMentorState extends State<DateEntryMentor> {
                   showError(context);
                 } else {
                   Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => AttendanceCheckMentor(
-                        batch: _batch,
-                        branch: _branch,
-                        dateSelected: dateTime,
-                      ),
-                    ),
-                  );
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ModifyPage(
+                                batch: _batch,
+                                branch: _branch,
+                                dateSelected: dateTime,
+                              )));
                 }
               },
               color: Theme.of(context).primaryColor.withOpacity(0.8),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15.0),
-              ),
+                  borderRadius: BorderRadius.circular(15.0)),
               child: Text(
                 "Submit",
                 textAlign: TextAlign.center,

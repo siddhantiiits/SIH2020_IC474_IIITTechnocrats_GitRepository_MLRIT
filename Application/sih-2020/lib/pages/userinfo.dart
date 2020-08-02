@@ -19,7 +19,7 @@ class _UserInfoState extends State<UserInfo> {
   String _uploadedFileUrl;
   final picker = ImagePicker();
   GlobalKey<FormState> _updateInfo = GlobalKey<FormState>();
-  String name, branch, batch, email, pass,hostel;
+  String name, branch, batch, email, pass, hostel;
   bool showPwd = false;
 
   @override
@@ -36,7 +36,7 @@ class _UserInfoState extends State<UserInfo> {
         "branch": branch,
         "batch": batch,
         "pwd": pass,
-        "hostel":hostel,
+        "hostel": hostel,
       });
       await auth.currentUser().then((value) => value.updatePassword(pass));
     }
@@ -178,16 +178,17 @@ class _UserInfoState extends State<UserInfo> {
                         Container(
                           decoration: BoxDecoration(color: Colors.black45),
                           child: InkWell(
-                              onTap: () {
-                                handlePhoto();
-                              },
-                              child: Text(
-                                "Update Photo",
-                                style: TextStyle(
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white),
-                              )),
+                            onTap: () {
+                              handlePhoto();
+                            },
+                            child: Text(
+                              "Update Photo",
+                              style: TextStyle(
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -204,7 +205,9 @@ class _UserInfoState extends State<UserInfo> {
                             initialValue: user.name,
                             decoration: InputDecoration(
                               labelText: "Name",
-                              labelStyle: TextStyle(color: Color(0xFFa1a1a1)),
+                              labelStyle: TextStyle(
+                                color: Color(0xFFa1a1a1),
+                              ),
                               hintText: "John Appleseed",
                               prefixIcon: Icon(
                                 Icons.account_circle,
@@ -214,12 +217,15 @@ class _UserInfoState extends State<UserInfo> {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide:
-                                      BorderSide(color: Color(0xFFa1a1a1))),
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: BorderSide(
+                                  color: Color(0xFFa1a1a1),
+                                ),
+                              ),
                               errorBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide: BorderSide(color: Colors.red)),
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: BorderSide(color: Colors.red),
+                              ),
                             ),
                           ),
                         ),
@@ -243,12 +249,15 @@ class _UserInfoState extends State<UserInfo> {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide:
-                                      BorderSide(color: Color(0xFFa1a1a1))),
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: BorderSide(
+                                  color: Color(0xFFa1a1a1),
+                                ),
+                              ),
                               errorBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide: BorderSide(color: Colors.red)),
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: BorderSide(color: Colors.red),
+                              ),
                             ),
                           ),
                         ),
@@ -280,9 +289,11 @@ class _UserInfoState extends State<UserInfo> {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide:
-                                      BorderSide(color: Color(0xFFa1a1a1))),
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: BorderSide(
+                                  color: Color(0xFFa1a1a1),
+                                ),
+                              ),
                               errorBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                   borderSide: BorderSide(color: Colors.red)),
@@ -312,9 +323,11 @@ class _UserInfoState extends State<UserInfo> {
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                    borderSide:
-                                        BorderSide(color: Color(0xFFa1a1a1))),
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Color(0xFFa1a1a1),
+                                  ),
+                                ),
                                 errorBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
                                     borderSide: BorderSide(color: Colors.red)),
@@ -387,7 +400,9 @@ class _UserInfoState extends State<UserInfo> {
                           child: TextFormField(
                             onSaved: (val) => hostel = val,
                             enabled: user.hostel == null ? false : true,
-                            initialValue: user.hostel==null ? "Day Scholar" : user.hostel,
+                            initialValue: user.hostel == null
+                                ? "Day Scholar"
+                                : user.hostel,
                             validator: (value) {
                               if (value.length > 5 || value.length < 5) {
                                 return "Please enter a valid Hostel Number";
@@ -407,7 +422,7 @@ class _UserInfoState extends State<UserInfo> {
                               focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                   borderSide:
-                                  BorderSide(color: Color(0xFFa1a1a1))),
+                                      BorderSide(color: Color(0xFFa1a1a1))),
                             ),
                           ),
                         )

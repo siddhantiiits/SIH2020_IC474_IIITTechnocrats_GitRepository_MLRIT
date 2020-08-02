@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:smart_attendance_manager/models/users.dart';
 import 'package:smart_attendance_manager/pages/home.dart';
+import 'package:smart_attendance_manager/pages/modifyAttendance.dart';
 import 'package:smart_attendance_manager/pages/runmain.dart';
 import 'package:smart_attendance_manager/widget/loader.dart';
 import 'package:animated_floatactionbuttons/animated_floatactionbuttons.dart';
@@ -181,10 +182,11 @@ class _IntroPage extends State<IntroPage> {
                                   ),
                                   onTap: () {
                                     Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                DateEntryMentor()));
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => DateEntryMentor(),
+                                      ),
+                                    );
                                   },
                                 ),
                                 SizedBox(height: 20.0),
@@ -212,7 +214,9 @@ class _IntroPage extends State<IntroPage> {
                                       ),
                                     ),
                                   ),
-                                  onTap: () {},
+                                  onTap: () {
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => ModifyAttendance()));
+                                  },
                                 ),
                                 SizedBox(height: 20.0),
                                 InkWell(
@@ -268,10 +272,11 @@ class _IntroPage extends State<IntroPage> {
                                   ),
                                   onTap: () {
                                     Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                MetricDownload()));
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => MetricDownload(),
+                                      ),
+                                    );
                                   },
                                 ),
                               ],
@@ -343,9 +348,11 @@ class _IntroPage extends State<IntroPage> {
                                 ),
                                 onTap: () {
                                   Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => DateEntry()));
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => DateEntry(),
+                                    ),
+                                  );
                                 },
                               ),
                               SizedBox(height: 20.0),
