@@ -31,7 +31,7 @@ class _ManageLeave extends State<ManageLeave>{
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       CircleAvatar(
-                        backgroundImage: NetworkImage(_leave[index]['photoUrl']),
+                        backgroundImage:_leave[index]['photoUrl'] == null ?Icon(Icons.account_circle) : NetworkImage(_leave[index]['photoUrl']),
                         radius: 50,
                       ),
                       Text(_leave[index]['name'],style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
