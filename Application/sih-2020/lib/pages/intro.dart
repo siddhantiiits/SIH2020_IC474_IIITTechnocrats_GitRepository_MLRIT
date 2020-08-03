@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:smart_attendance_manager/models/users.dart';
+import 'package:smart_attendance_manager/pages/applyleave.dart';
 import 'package:smart_attendance_manager/pages/home.dart';
+import 'package:smart_attendance_manager/pages/manageLeave.dart';
 import 'package:smart_attendance_manager/pages/modifyAttendance.dart';
 import 'package:smart_attendance_manager/pages/runmain.dart';
 import 'package:smart_attendance_manager/widget/loader.dart';
@@ -294,6 +296,40 @@ class _IntroPage extends State<IntroPage> {
                                     );
                                   },
                                 ),
+                                SizedBox(height: 20.0),
+                                InkWell(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(1.0),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        color: Color.fromRGBO(57, 90, 174, 1),
+                                        border: Border.all(color: Colors.white),
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(20),
+                                        ),
+                                      ),
+                                      height: 80,
+                                      width: double.infinity,
+                                      child: Center(
+                                        child: Text(
+                                          ' Manage Leave Requests ',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 30,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => ManageLeave(),
+                                      ),
+                                    );
+                                  },
+                                ),
                               ],
                             ),
                           ),
@@ -395,7 +431,7 @@ class _IntroPage extends State<IntroPage> {
                                     ),
                                   ),
                                 ),
-                                onTap: () {},
+                                onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => ApplyLeave()));},
                               ),
                               SizedBox(height: 20.0),
                               InkWell(

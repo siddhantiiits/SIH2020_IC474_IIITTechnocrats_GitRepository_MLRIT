@@ -21,6 +21,7 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  date_range_picker: ^1.0.5
   flutter_duration_picker:
   url_launcher: ^5.5.0
   swipe_stack: ^1.0.0
