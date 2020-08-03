@@ -45,19 +45,37 @@ class _ApplyLeave extends State<ApplyLeave>{
   List<String> formatDate = [];
   List<DateTime> listDate = [];
 
+  showDuplicateError(context) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text("Error"),
+            content: Text(
+                "Already applied"),
+          );
+        });
+  }
+
   addLeave() async {
-    await leaveRef.document(currentUser.uid).setData({
-      "name":currentUser.name,
-      "roll":currentUser.roll,
-      "hostel":currentUser.hostel,
-      "batch":currentUser.batch,
-      "branch":currentUser.branch,
-      "msg":_leaveMsg.text,
-      "email":currentUser.email,
-      "photoUrl":currentUser.photoUrl,
-      "dateFrom":"${listDate[0].day}/${listDate[0].month}/${listDate[0].year}",
-      "dateTo":"${listDate[1].day}/${listDate[1].month}/${listDate[1].year}",
-    });
+    DocumentSnapshot doc = await leaveRef.document(currentUser.uid).get();
+    if(!doc.exists){
+      await leaveRef.document(currentUser.uid).setData({
+        "name":currentUser.name,
+        "roll":currentUser.roll,
+        "hostel":currentUser.hostel,
+        "batch":currentUser.batch,
+        "branch":currentUser.branch,
+        "msg":_leaveMsg.text,
+        "email":currentUser.email,
+        "photoUrl":currentUser.photoUrl,
+        "dateFrom":"${listDate[0].day}/${listDate[0].month}/${listDate[0].year}",
+        "dateTo":"${listDate[1].day}/${listDate[1].month}/${listDate[1].year}",
+      });
+    }else{
+      showDuplicateError(context);
+    }
+
   }
 
 

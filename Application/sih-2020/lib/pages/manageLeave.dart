@@ -36,7 +36,7 @@ class _ManageLeave extends State<ManageLeave>{
                       ),
                       Text(_leave[index]['name'],style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
                       Text("${_leave[index]['batch']}, ${_leave[index]['branch']}",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
-                      Text("${_leave[index]['dateFrom']} to ${_leave[index]['dateTo']}",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400),),
+                      _leave[index]['dateFrom'] == _leave[index]['dateTo'] ?Text("${_leave[index]['dateFrom']}",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400),) :Text("${_leave[index]['dateFrom']} to ${_leave[index]['dateTo']}",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400),),
                       Text(_leave[index]['msg'],style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400),),
                     ],
                   ),
