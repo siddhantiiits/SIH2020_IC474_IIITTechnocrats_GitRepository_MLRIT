@@ -102,6 +102,8 @@ class _RunMain extends State<RunMain> {
     var client = new http.Client();
     try {
       var res = await client.post('http://10.0.2.2:5000/${mentor.name}/${_batch}/${_branch}');
+//      for iOS present:
+//      var res = await client.post('http://127.0.0.1:5000/${mentor.name}/${_batch}/${_branch}');
       print(res.body);
     } finally {
       client.close();
@@ -298,7 +300,25 @@ class _RunMain extends State<RunMain> {
                     if (_batch == "" || _branch == "") {
                       showError(context);
                     } else {
-                      runMain(currentUser,_batch,_branch).then((val) => _scaffoldState.currentState.showSnackBar(SnackBar(content: Text("Captured"))));
+                      showDialog(context: context,builder: (context) => Dialog(
+                        child:Container(
+                          height: 60,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.max,
+                            children: <Widget>[
+                              ColorLoader2(
+                                color1: Colors.redAccent,
+                                color2: Colors.deepPurple,
+                                color3: Colors.green,
+                              ),
+                              Padding(padding: EdgeInsets.symmetric(horizontal: 15),child:  Text("Capturing ..."),),
+                            ],
+                          ),
+                        ),
+                      ));
+                      runMain(currentUser,_batch,_branch).then((val) {Navigator.pop(context); _scaffoldState.currentState.showSnackBar(SnackBar(content: Text("Captured")));});
                     }
                   },
                   color: Theme.of(context).primaryColor.withOpacity(0.8),
