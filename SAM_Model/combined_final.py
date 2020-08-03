@@ -1,5 +1,6 @@
 # SAM Server Side : Developed by IIIT Technocrats, IIIT Sonepat
 # SAM Server Side : Developed by IIIT Technocrats, IIIT Sonepat
+#python3 combined_final.py "Mentor 1" "2019" "IT"
 import sys
 import cv2
 import numpy as np
@@ -99,6 +100,7 @@ timeout = time.time() + 30  # 30 sec from now
 while True:
     success, img = cap.read()
     # img = captureScreen()
+
     imgS = cv2.resize(img, (0, 0), None, 0.25, 0.25)
     imgS = cv2.cvtColor(imgS, cv2.COLOR_BGR2RGB)
 

@@ -79,9 +79,15 @@ pdf.cell(250, 12, txt="Total Working Days =" + str(day_count),
              ln=3,align='L')
 
 pdf.cell(200, 10,
+         txt=''
+             '1-07-2020 to 1-08-2020' ,
+         ln=5, )
+
+pdf.cell(200, 10,
          txt='Roll No. \t\t\t\t No. of DP \t\t\t\t Precentage' ,
-         ln=4, )
-i=5
+         ln=5, )
+
+i=6
 
 for key in list(d.keys()):
 
