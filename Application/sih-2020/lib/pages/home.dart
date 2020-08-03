@@ -11,6 +11,7 @@ final FirebaseAuth auth = FirebaseAuth.instance;
 final userRef = Firestore.instance.collection('users');
 final storageRef = FirebaseStorage.instance.ref();
 final attendanceRef = Firestore.instance.collection('Attendance');
+final reqRef = Firestore.instance.collection("requests");
 
 class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();

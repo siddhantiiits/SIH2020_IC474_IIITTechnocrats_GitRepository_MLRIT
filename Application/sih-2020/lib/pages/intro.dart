@@ -10,6 +10,7 @@ import 'package:smart_attendance_manager/pages/userinfo.dart';
 import 'package:smart_attendance_manager/pages/mentordateentry.dart';
 import 'package:smart_attendance_manager/pages/dateentry.dart';
 import 'package:smart_attendance_manager/pages/metricdownload.dart';
+import 'package:smart_attendance_manager/pages/addrequest.dart';
 
 class IntroPage extends StatefulWidget {
   _IntroPage createState() => _IntroPage();
@@ -152,7 +153,10 @@ class _IntroPage extends State<IntroPage> {
                                     ),
                                   ),
                                   onTap: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) => RunMain()));
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => RunMain()));
                                   },
                                 ),
                                 SizedBox(height: 20.0),
@@ -215,7 +219,11 @@ class _IntroPage extends State<IntroPage> {
                                     ),
                                   ),
                                   onTap: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) => ModifyAttendance()));
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                ModifyAttendance()));
                                   },
                                 ),
                                 SizedBox(height: 20.0),
@@ -407,7 +415,10 @@ class _IntroPage extends State<IntroPage> {
                                     ),
                                   ),
                                 ),
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) => AddRequest()));
+                                },
                               ),
                             ],
                           ),
