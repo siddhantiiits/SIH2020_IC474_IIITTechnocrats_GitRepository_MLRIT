@@ -11,6 +11,7 @@ import 'package:smart_attendance_manager/pages/mentordateentry.dart';
 import 'package:smart_attendance_manager/pages/dateentry.dart';
 import 'package:smart_attendance_manager/pages/metricdownload.dart';
 import 'package:smart_attendance_manager/pages/addrequest.dart';
+import 'package:smart_attendance_manager/pages/reviewReqCard.dart';
 
 class IntroPage extends StatefulWidget {
   _IntroPage createState() => _IntroPage();
@@ -251,7 +252,13 @@ class _IntroPage extends State<IntroPage> {
                                       ),
                                     ),
                                   ),
-                                  onTap: () {},
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                ReviewReqCard()));
+                                  },
                                 ),
                                 SizedBox(height: 20.0),
                                 InkWell(

@@ -23,6 +23,7 @@ environment:
 dependencies:
   flutter_duration_picker:
   url_launcher: ^5.5.0
+  swipe_stack: ^1.0.0
   flare_splash_screen: ^3.0.1
   flutter_localizations:
     sdk: flutter
