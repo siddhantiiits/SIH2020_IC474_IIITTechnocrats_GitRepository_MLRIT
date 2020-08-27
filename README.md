@@ -24,5 +24,5 @@ Automating Attendance using Mass Face Recognition and dual Interface Mobile Appl
 
 ## Authors
 
-* **IIIT Technocrats** - *Core Team* - [Smart Attendance Manager](https://github.com/siddhantiiits/SIH2020_IC474_IIITTechnocrats_GitRepository_MLRIT.git)
+* **Technocrats** - *Core Team* - [Smart Attendance Manager](https://github.com/siddhantiiits/SIH2020_IC474_IIITTechnocrats_GitRepository_MLRIT.git)
 
