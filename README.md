@@ -1,6 +1,7 @@
 # SIH2020_IC474_IIITTechnocrats_GitRepository_MLRIT
 
 # Smart Attendance Manager
+Copyright - 2020 | Team IIIT Technocrats
 
 Automating Attendance using Mass Face Recognition and dual Interface Mobile Application for Android as well as iOS.
 
